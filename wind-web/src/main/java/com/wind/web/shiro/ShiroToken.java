@@ -1,4 +1,4 @@
-package com.wind.portal.shiro;
+package com.wind.web.shiro;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

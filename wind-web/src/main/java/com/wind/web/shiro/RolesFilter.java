@@ -1,4 +1,4 @@
-package com.wind.portal.shiro;
+package com.wind.web.shiro;
 
 import com.wind.common.common.utils.RequestUtils;
 import com.wind.common.common.utils.ResponseUtils;

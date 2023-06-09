@@ -1,4 +1,4 @@
-package com.wind.portal.shiro;
+package com.wind.web.shiro;
 
 
 import lombok.extern.slf4j.Slf4j;

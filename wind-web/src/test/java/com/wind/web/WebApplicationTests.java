@@ -1,10 +1,10 @@
-package com.wind.portal;
+package com.wind.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PortalApplicationTests {
+class WebApplicationTests {
 
     @Test
     void contextLoads() {

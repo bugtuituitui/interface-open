@@ -1,4 +1,4 @@
-package com.wind.portal.controller.admin;
+package com.wind.web.controller.admin;
 
 import com.wind.client.OpenApiClient;
 import com.wind.common.common.lang.Result;

@@ -1,4 +1,4 @@
-package com.wind.portal.interceptor;
+package com.wind.web.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 

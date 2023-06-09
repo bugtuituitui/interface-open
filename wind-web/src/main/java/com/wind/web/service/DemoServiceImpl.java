@@ -1,4 +1,4 @@
-package com.wind.portal.service;
+package com.wind.web.service;
 
 import org.apache.dubbo.config.annotation.DubboService;
 

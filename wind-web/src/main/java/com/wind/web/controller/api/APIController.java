@@ -1,4 +1,4 @@
-package com.wind.portal.controller.api;
+package com.wind.web.controller.api;
 
 import cn.hutool.core.util.RandomUtil;
 import com.wind.common.common.lang.Result;

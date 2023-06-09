@@ -1,4 +1,4 @@
-package com.wind.portal.controller;
+package com.wind.web.controller;
 
 
 import com.wind.common.common.lang.Result;

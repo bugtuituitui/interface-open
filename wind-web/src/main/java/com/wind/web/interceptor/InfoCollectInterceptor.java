@@ -1,4 +1,4 @@
-package com.wind.portal.interceptor;
+package com.wind.web.interceptor;
 
 import com.wind.common.common.constant.Header;
 import com.wind.common.common.user.RequestHolder;
