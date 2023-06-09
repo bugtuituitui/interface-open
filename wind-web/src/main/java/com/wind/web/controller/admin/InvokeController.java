@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin/invoke")
 public class InvokeController {
 
-
     @Autowired
     private InvokeServiceImpl invokeService;
 

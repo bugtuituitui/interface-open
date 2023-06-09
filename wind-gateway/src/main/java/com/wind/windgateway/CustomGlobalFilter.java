@@ -111,6 +111,10 @@ public class CustomGlobalFilter implements GlobalFilter {
             return handleNoAuth(exchange.getResponse());
         }
 
+        // 校验接口调用次数
+        if (!cert.getUnlimited() && cert.getTotalCount() < 1 ) {
+            return handleNoAuth(exchange.getResponse());
+        }
 
         return chain.filter(exchange);
     }
