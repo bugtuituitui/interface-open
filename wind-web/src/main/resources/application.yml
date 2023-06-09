@@ -1,0 +1,19 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: wind-web
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/interface-open?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: dust0000
+dubbo:
+  application:
+    name: dubbo-wind-web
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848

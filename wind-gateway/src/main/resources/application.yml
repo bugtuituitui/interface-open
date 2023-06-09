@@ -1,0 +1,38 @@
+# 公共配置文件
+server:
+  port: 9002
+spring:
+  application:
+    name: wind-gateway
+  main:
+    web-application-type: reactive
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/interface-open?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: dust0000
+  cloud:
+    gateway:
+      default-filters:
+        - AddResponseHeader=source, yupi
+      routes:
+        - id: api_route
+          uri: http://localhost:9003
+          predicates:
+            - Path=/api/**
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+dubbo:
+  application:
+    name: dubbo-wind-gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
+

@@ -1,0 +1,5 @@
+# 公共配置文件
+server:
+  port: 9003
+  servlet:
+    context-path: /api
