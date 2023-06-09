@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-06-07
  */
 @RestController
-@RequestMapping("/invoke")
+@RequestMapping("/admin/invoke")
 public class InvokeController {
 
 

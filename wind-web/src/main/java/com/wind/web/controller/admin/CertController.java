@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-06-07
  */
 @RestController
-@RequestMapping("/cert")
+@RequestMapping("/admin/cert")
 public class CertController {
 
 

@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  * @date 2023/6/8 13:56
  */
 @RestController
-@RequestMapping("/apiTest")
+@RequestMapping("/admin/apiTest")
 public class APITestController {
 
     @Autowired

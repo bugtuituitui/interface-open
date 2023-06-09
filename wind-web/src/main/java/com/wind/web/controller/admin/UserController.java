@@ -1,4 +1,4 @@
-package com.wind.web.controller;
+package com.wind.web.controller.admin;
 
 
 import com.wind.common.common.lang.Result;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-06-07
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/admin/user")
 public class UserController {
 
     @Autowired

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-06-07
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/admin/api")
 public class ApiController {
 
     @Autowired

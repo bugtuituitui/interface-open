@@ -42,12 +42,10 @@ public class ShiroConfig {
         // anon：放行 authc: 需认证 roles[role1, role2] 需校验角色
 
         // 放行接口
+        filterRuleMap.put("/admin/user/login", "authc");
 
-        filterRuleMap.put("/user/getInfo", "authc");
-        filterRuleMap.put("/user/logout", "authc");
-        // filterRuleMap.put("/**", "anon");
         // 需认证接口
-//      filterRuleMap.put("/**", "authc");
+        filterRuleMap.put("/admin/**", "authc");
 
         // 需角色校验接口
 //      filterRuleMap.put("/admin/**", "roles[admin]");
