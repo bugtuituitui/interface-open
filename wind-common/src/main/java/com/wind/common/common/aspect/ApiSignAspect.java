@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.wind.common.common.constant.Header;
 import com.wind.common.common.exception.BusinessException;
 import com.wind.common.common.lang.Result;
 import com.wind.common.common.utils.AssertUtils;
@@ -40,21 +41,6 @@ import java.util.stream.Stream;
 @Aspect
 @Component
 public class ApiSignAspect {
-
-    // api key
-    private static final String API_KEY = "apiKey";
-
-    // api secret
-    private static final String API_SECRET = "apiSecret";
-
-    // 时间戳
-    private static final String TIMESTAMP = "timestamp";
-
-    // 流水号
-    private static final String NONCE = "nonce";
-
-    // 签名
-    private static final String SIGNATURE = "signature";
 
     private static final String SIGN_ERROR_MSG = "签名错误";
 
@@ -92,24 +78,32 @@ public class ApiSignAspect {
 
         HttpServletRequest request = RequestUtils.getRequest();
 
-        AssertUtils.isEmpty(request.getHeader(TIMESTAMP), SIGN_ERROR_MSG);
-        AssertUtils.isEmpty(request.getHeader(NONCE), SIGN_ERROR_MSG);
-        AssertUtils.isEmpty(request.getHeader(API_KEY), SIGN_ERROR_MSG);
-        AssertUtils.isEmpty(request.getHeader(API_SECRET), SIGN_ERROR_MSG);
-        AssertUtils.isEmpty(request.getHeader(SIGNATURE), SIGN_ERROR_MSG);
+        // 校验请求头
+        String key = request.getHeader(Header.APIKEY);
+        String secret = request.getHeader(Header.APISECRET);
+        String timestampStr = request.getHeader(Header.TIMESTAMP);
+        String nonceStr = request.getHeader(Header.NONCE);
+        String sign = request.getHeader(Header.SIGNATURE);
 
+        List<Object> headerList = new ArrayList<>();
+        headerList.add(key);
+        headerList.add(secret);
+        headerList.add(timestampStr);
+        headerList.add(nonceStr);
+        headerList.add(sign);
 
-        String apiKey = request.getHeader(API_KEY);
-        String apiSecret = request.getHeader(API_SECRET);
+        if (headerList.contains(null) || headerList.contains("")) {
+            throw new BusinessException(-1, SIGN_ERROR_MSG);
+        }
+
 
         // 校验key和secret
-        Cert cert = certMapper.getByKeyAndSecret(apiKey, apiSecret);
+        Cert cert = certMapper.getByKeyAndSecret(key, secret);
 
         AssertUtils.isEmpty(cert, "签名不存在");
 
-        Long timestamp = Long.valueOf(request.getHeader(TIMESTAMP));
-        Integer nonce = Integer.valueOf(request.getHeader(NONCE));
-        String sign = request.getHeader(SIGNATURE);
+        Long timestamp = Long.valueOf(timestampStr);
+        Integer nonce = Integer.valueOf(nonceStr);
 
         // 检验请求是否过期
         long now = System.currentTimeMillis();
@@ -118,10 +112,10 @@ public class ApiSignAspect {
         }
 
         // 检验是否是重发请求
-        if (redisUtils.get(apiKey + nonce) != null) {
+        if (redisUtils.get(key + nonce) != null) {
             throw new BusinessException(-1, HTTP_RESEND_MSG);
         } else {
-            redisUtils.set(apiKey + nonce, 0, 60);
+            redisUtils.set(key + nonce, 0, 60);
         }
 
         // 获取参数
@@ -161,8 +155,8 @@ public class ApiSignAspect {
 
         // 参数为对象
         Set<String> keys = jsonObject.keySet();
-        for (String key : keys) {
-            map.put(key, jsonObject.getString(key));
+        for (String k : keys) {
+            map.put(k, jsonObject.getString(key));
         }
 
         // 拼接参数
@@ -171,7 +165,7 @@ public class ApiSignAspect {
 
         // 校验sign
         try {
-            if (sign == null || !sign.equals(SignatureGenerator.generateSignature(apiKey, apiSecret, params, timestamp, nonce))) {
+            if (sign == null || !sign.equals(SignatureGenerator.generateSignature(key, secret, params, timestamp, nonce))) {
                 throw new BusinessException(-1, SIGN_ERROR_MSG);
             }
         } catch (Exception e) {

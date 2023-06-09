@@ -20,8 +20,8 @@ import java.util.*;
 public class WindAPIClient {
 
     private static final String HOST = "http://127.0.0.1:9002";
-    private String apiKey = "12312";
-    private String apiSecret = "123123";
+    private String apiKey;
+    private String apiSecret;
 
     public WindAPIClient(String apiKey, String apiSecret) {
         this.apiKey = apiKey;
@@ -36,8 +36,8 @@ public class WindAPIClient {
     private Map<String, String> createHeader(String body) throws NoSuchAlgorithmException {
 
         HashMap<String, String> map = new HashMap<>();
-        map.put("apiKey", apiKey);
-        map.put("apiSecret", apiSecret);
+        map.put("key", apiKey);
+        map.put("secret", apiSecret);
 
         long timestamp = System.currentTimeMillis();
         String nonce = RandomUtil.randomNumbers(5);

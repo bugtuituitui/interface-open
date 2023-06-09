@@ -51,8 +51,8 @@ public class CustomGlobalFilter implements GlobalFilter {
 
         HttpHeaders headers = request.getHeaders();
 
-        String key = headers.getFirst("apiKey");
-        String secret = headers.getFirst("apiSecret");
+        String key = headers.getFirst("key");
+        String secret = headers.getFirst("secret");
         String timestampStr = headers.getFirst("timestamp");
         String nonceStr = headers.getFirst("nonce");
         String sign = headers.getFirst("signature");
