@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 @SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class})
+        HibernateJpaAutoConfiguration.class}, scanBasePackages = "com.wind")
 public class WindInterfacesApplication {
 
     public static void main(String[] args) {

@@ -3,3 +3,8 @@ server:
   port: 9003
   servlet:
     context-path: /api
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/interface-open?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: dust0000

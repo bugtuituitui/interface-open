@@ -1,10 +1,10 @@
 package com.wind.common.common.template;
 
-import com.wind.common.common.lang.PageData;
-import com.wind.common.common.template.query.BaseQuery;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.wind.common.common.lang.PageData;
+import com.wind.common.common.template.query.BaseQuery;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
