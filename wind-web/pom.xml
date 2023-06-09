@@ -17,6 +17,13 @@
         <java.version>8</java.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>com.wind</groupId>
+            <artifactId>wind-client-sdk</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
         <dependency>
             <groupId>com.wind</groupId>
             <artifactId>wind-common</artifactId>

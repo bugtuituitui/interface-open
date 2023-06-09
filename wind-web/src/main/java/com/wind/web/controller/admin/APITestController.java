@@ -20,15 +20,8 @@ public class APITestController {
     @Autowired
     private OpenApiClient openApiClient;
 
-    @PostConstruct
-    void init() {
-        System.out.println("===============");
-        System.out.println(openApiClient.getApiKey());
-    }
-
     @RequestMapping("/execute")
     public Result executeApi(String api, String body) throws NoSuchAlgorithmException {
-
         return Result.success(openApiClient.sendRequest(body, api));
     }
 }

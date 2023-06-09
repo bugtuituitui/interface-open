@@ -17,3 +17,8 @@ dubbo:
   registry:
     id: nacos-registry
     address: nacos://localhost:8848
+# 接口调用sdk配置
+windapi:
+  client:
+    key: 5is0n9eoky
+    secret: 158u0co90w
