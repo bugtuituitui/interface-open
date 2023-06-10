@@ -185,7 +185,7 @@ public class ApiSignAspect {
         threadPoolTaskExecutor.execute(() -> {
             Invoke invoke = new Invoke();
             invoke.setDesc(JSON.toJSONString(result));
-            invoke.setApi(request.getRequestURI());
+            invoke.setApiPath(request.getRequestURI());
             invoke.setUserId(cert.getUserId());
             invoke.setUsername(cert.getUsername());
             if (result.getCode() == 200) {

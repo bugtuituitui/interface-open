@@ -1,6 +1,8 @@
 package com.wind.common.web.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.wind.common.common.sensitive.Sensitive;
+import com.wind.common.common.sensitive.SensitiveStrategy;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -47,6 +49,7 @@ public class User implements Serializable {
     /**
      * 密码
      */
+    @Sensitive(strategy = SensitiveStrategy.CUSTOMER, prefixNoMaskLen = 2, suffixNoMaskLen = 2)
     @NotBlank(message = "密码为空")
     @Pattern(regexp = "^[a-zA-Z]{6,9}$", message = "6-8字母")
     private String password;

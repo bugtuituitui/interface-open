@@ -54,6 +54,7 @@ public class SubCountInterceptor implements HandlerInterceptor {
             if (response.getStatus() == HttpStatus.OK.value()) {
                 if (!cert.getUnlimited()) {
                     cert.setTotalCount(cert.getTotalCount() - 1);
+                    certMapper.updateById(cert);
                 }
             }
 
@@ -63,6 +64,7 @@ public class SubCountInterceptor implements HandlerInterceptor {
             Invoke invoke = new Invoke();
             invoke.setApiId(api.getId());
             invoke.setApiName(api.getApiName());
+            invoke.setApiPath(api.getApiPath());
             invoke.setParams(params);
             invoke.setUserId(cert.getUserId());
             invoke.setUsername(cert.getUsername());

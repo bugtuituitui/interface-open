@@ -23,7 +23,7 @@
     <select id="getByPath" resultMap="BaseResultMap">
         select *
         from api
-        where id_deleted = 0
+        where is_deleted = 0
           and api_path = #{path}
     </select>
 </mapper>

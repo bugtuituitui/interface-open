@@ -14,7 +14,7 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - AddResponseHeader=source, yupi
+        - AddResponseHeader=source, wind
       routes:
         - id: api_route
           uri: http://localhost:9003
