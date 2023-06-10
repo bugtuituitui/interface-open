@@ -115,7 +115,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      */
     @Override
     public boolean insertEntity(User entity) {
-        return false;
+        return save(entity);
     }
 
     /**
@@ -126,7 +126,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      */
     @Override
     public boolean updateEntity(User entity) {
-        return false;
+        return updateById(entity);
     }
 
     /**

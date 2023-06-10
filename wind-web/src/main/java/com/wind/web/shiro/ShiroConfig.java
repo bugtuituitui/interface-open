@@ -43,9 +43,11 @@ public class ShiroConfig {
 
         // 放行接口
         filterRuleMap.put("/admin/user/login", "anon");
+        filterRuleMap.put("/web/user/login", "anon");
 
         // 需认证接口
         filterRuleMap.put("/admin/**", "authc");
+        filterRuleMap.put("/web/**", "authc");
 
         // 需角色校验接口
 //      filterRuleMap.put("/admin/**", "roles[admin]");
