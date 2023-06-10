@@ -84,5 +84,25 @@ public class UserController {
         return Result.success(userService.listEntity(query));
     }
 
+
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/insert")
+    Result insertUser(User user) {
+        return Result.success(userService.insertEntity(user));
+    }
+
+    /**
+     * 修改用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/update")
+    Result updateUser(User user) {
+        return Result.success(userService.updateEntity(user));
+    }
 }
 
