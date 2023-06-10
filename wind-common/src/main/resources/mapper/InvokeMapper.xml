@@ -6,7 +6,10 @@
         <id column="invoke_id" property="invokeId"/>
         <result column="user_id" property="userId"/>
         <result column="username" property="username"/>
-        <result column="api" property="api"/>
+        <result column="api_id" property="apiId"/>
+        <result column="api_name" property="apiName"/>
+        <result column="api_path" property="apiPath"/>
+        <result column="params" property="params"/>
         <result column="status" property="status"/>
         <result column="desc" property="desc"/>
         <result column="create_time" property="createTime"/>
@@ -17,6 +20,6 @@
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         invoke_id
-        , user_id, username, api, status, desc, create_time, update_time, is_deleted
+        , user_id, username, api_id, api_name, api_path, params, status, desc, create_time, update_time, is_deleted
     </sql>
 </mapper>

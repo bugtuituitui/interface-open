@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.wind</groupId>
             <artifactId>wind-client-sdk</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
 
         <dependency>
@@ -53,15 +53,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
-
-        <!-- mybatis plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>

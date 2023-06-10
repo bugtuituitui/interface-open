@@ -1,6 +1,6 @@
 package com.wind.web.controller.admin;
 
-import com.wind.client.OpenApiClient;
+import com.wind.client.client.WindAPIClient;
 import com.wind.common.common.lang.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +17,10 @@ import java.security.NoSuchAlgorithmException;
 public class APITestController {
 
     @Autowired
-    private OpenApiClient openApiClient;
+    private WindAPIClient windAPIClient;
 
     @RequestMapping("/execute")
     public Result executeApi(String api, String body) throws NoSuchAlgorithmException {
-        return Result.success(openApiClient.sendRequest(body, api));
+        return Result.success(windAPIClient.sendRequest(body, api));
     }
 }

@@ -19,6 +19,18 @@
     </properties>
     <dependencies>
 
+        <dependency>
+            <groupId>com.wind</groupId>
+            <artifactId>wind-client-sdk</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wind</groupId>
+            <artifactId>wind-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -217,13 +229,6 @@
             <artifactId>guava</artifactId>
             <version>30.1.1-jre</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.wind</groupId>
-            <artifactId>open-sdk</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
 
     </dependencies>
 

@@ -15,4 +15,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ApiMapper extends BaseMapper<Api> {
 
+    /**
+     * 根据地址查询接口
+     *
+     * @param path
+     * @return
+     */
+    Api getByPath(String path);
 }

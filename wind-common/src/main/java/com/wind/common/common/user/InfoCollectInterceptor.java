@@ -4,8 +4,6 @@ import com.wind.common.common.constant.Header;
 import com.wind.common.common.utils.JwtUtils;
 import com.wind.common.web.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +16,8 @@ import java.util.Optional;
  * @author kfg
  * @date 2023/6/4 22:25
  */
-@Order(10)
-@Component
+//Order(10)
+//@Component
 public class InfoCollectInterceptor implements HandlerInterceptor {
 
     @Autowired

@@ -39,9 +39,24 @@ public class Invoke implements Serializable {
     private String username;
 
     /**
-     * 调用接口
+     * 接口id
      */
-    private String api;
+    private Long apiId;
+
+    /**
+     * 接口名称
+     */
+    private String apiName;
+
+    /**
+     * 接口地址
+     */
+    private String apiPath;
+
+    /**
+     * 请求参数
+     */
+    private String params;
 
     /**
      * 调用结果 0：成功 1：失败

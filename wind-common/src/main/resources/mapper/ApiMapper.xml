@@ -18,4 +18,12 @@
         id
         , api_name, api_path, api_params, api_desc, update_time, create_time, is_deleted
     </sql>
+
+    <!-- 根据地址查询接口 -->
+    <select id="getByPath" resultMap="BaseResultMap">
+        select *
+        from api
+        where id_deleted = 0
+          and api_path = #{path}
+    </select>
 </mapper>
