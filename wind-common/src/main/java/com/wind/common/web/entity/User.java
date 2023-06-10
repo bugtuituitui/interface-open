@@ -49,7 +49,7 @@ public class User implements Serializable {
     /**
      * 密码
      */
-    @Sensitive(strategy = SensitiveStrategy.CUSTOMER, prefixNoMaskLen = 0, suffixNoMaskLen = 0)
+    @Sensitive(strategy = SensitiveStrategy.CUSTOMER, prefixNoMaskLen = 2, suffixNoMaskLen = 2)
     @NotBlank(message = "密码为空")
     @Pattern(regexp = "^[a-zA-Z]{6,9}$", message = "6-8字母")
     private String password;
