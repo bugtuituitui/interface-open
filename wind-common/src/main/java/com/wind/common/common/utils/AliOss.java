@@ -19,9 +19,9 @@ import java.util.UUID;
  * @Date: 2021-01-07 14:59
  */
 public class AliOss {
-    private static final String endpoint = "https://oss-cn-qingdao.aliyuncs.com";
-    private static final String accessKeyId = "LTAI5tGCW6UMyZzkPcKweQBM";
-    private static final String accessKeySecret = "c7AQb3pqQvQR5ikTf0kyknwvl1HDu0";
+    private static final String endpoint = "https://oss-cn-.aliyuncs.com";
+    private static final String accessKeyId = "LTM";
+    private static final String accessKeySecret = "c7AQb3pqDu0";
     private static final String bucketName = "doc-save";
     private static final String root = "doc-save/";
 
